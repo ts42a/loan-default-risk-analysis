@@ -112,13 +112,6 @@ python src/stage2_spark.py
 - class weights, output-bias initialisation, early stopping on validation PR-AUC
 - same threshold protocol and metrics; comparison chart if Spark results already exist
 
-## Team
-
-Fill in before Moodle submission (first slide of the presentation must match this table).
-
-| Name | Student number | Contribution |
-|---|---|---|
-| | | |
 
 ## Licence
 
