@@ -1,0 +1,4 @@
+model,parameters
+LogisticRegression,"{'regParam': 0.001, 'elasticNetParam': 0.0}"
+RandomForest,"{'numTrees': 100, 'maxDepth': 12}"
+GBT,"{'maxDepth': 4, 'maxIter': 100}"

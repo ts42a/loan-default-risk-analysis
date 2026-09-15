@@ -1,0 +1,8 @@
+rank,attribute,justification
+1,int_rate,Strongest single numeric signal (r = +0.155); the risk-based price LC charges summarises its own underwriting view.
+2,grade / sub_grade,Default rate climbs monotonically from 1.83% (grade A) to 16.70% (grade G) — a 14.88% spread across 7 bands.
+3,term,"A 1.55% spread between the two terms (60-month loans default most, r = +0.031); longer exposure means more time to fail."
+4,dti,Debt-to-income is the standard measure of repayment capacity (r = +0.010) and is available at application time.
+5,revol_util,Revolving utilisation (r = +0.045) shows how much headroom the borrower has already consumed.
+6,inq_last_6mths,"Recent credit enquiries (r = +0.074) proxy active credit seeking, an early distress signal."
+7,annual_inc,Income anchors every affordability ratio (r = -0.037); the derived loan_to_income reaches r = +0.050.

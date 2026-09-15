@@ -1,0 +1,6 @@
+rows_raw=855969
+distinct_id=855969
+distinct_member_id=855969
+duplicate_loan_ids=0
+fully_identical_rows=0
+rows_after_dedup=855969

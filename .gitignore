@@ -1,0 +1,42 @@
+# --- Dataset (too large for GitHub: data.csv is ~317 MB) ---
+data/*.csv
+data/*.parquet
+data/*.zip
+
+# --- Generated artefacts ---
+# Figures, tables and summaries under results/ ARE committed (they back the slides).
+# Only the bulky intermediate datasets and model binaries are ignored.
+results/**/data/
+results/**/*.parquet
+# Smoke-test run folders (STAGE1_SAMPLE / STAGE2_SAMPLE < 1). Full runs and
+# results/*/final/ are committed for the slides.
+results/stage1/*_s*/
+results/spark/*_s*/
+results/tensorflow/*_s*/
+
+# --- Local JDK (portable Temurin, not committed) ---
+.jdk/
+
+# --- Spark / Hadoop local scratch ---
+.spark-tmp/
+.hadoop/
+spark-warehouse/
+metastore_db/
+derby.log
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+
+# --- Notebooks ---
+.ipynb_checkpoints/
+
+# --- Editors / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

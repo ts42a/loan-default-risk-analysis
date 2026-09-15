@@ -1,0 +1,16 @@
+CSCI316 Stage 2, Process One — Spark MLlib
+Run 2026-09-15 10:18
+Rows train/validation/test: 164,543 / 41,215 / 51,103 (stratified (0.64, 0.16, 0.2))
+Test default rate: 5.47%  |  majority-class accuracy: 94.53%
+Features: 138 assembled columns from 27 numeric + 6 categorical inputs
+Cross-validation: enabled (areaUnderPR)
+
+Test-set results:
+  LogisticRegression: ROC-AUC=0.7861  PR-AUC=0.1590  F1(default)@0.635=0.2490  recall=0.5034  precision=0.1654
+  RandomForest: ROC-AUC=0.7629  PR-AUC=0.1581  F1(default)@0.615=0.2245  recall=0.2753  precision=0.1895
+  GBT: ROC-AUC=0.7988  PR-AUC=0.1716  F1(default)@0.680=0.2593  recall=0.4501  precision=0.1821
+
+Best PR-AUC: GBT (0.1716), 3.14x the random baseline of 0.0547.
+At its tuned threshold it finds 45.0% of defaults (1,257 of 2,793) while flagging 5,647 good loans.
+Accuracy at 0.5 (71.77%) must be read against the 94.53% a constant 'no default' rule already achieves.
+No post-origination payment feature was used as a predictor.

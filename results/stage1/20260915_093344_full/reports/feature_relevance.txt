@@ -1,0 +1,22 @@
+CSCI316 Stage 1 — attribute relevance
+
+Seven MOST relevant:
+  1. int_rate: Strongest single numeric signal (r = +0.155); the risk-based price LC charges summarises its own underwriting view.
+  2. grade / sub_grade: Default rate climbs monotonically from 1.83% (grade A) to 16.70% (grade G) — a 14.88% spread across 7 bands.
+  3. term: A 1.55% spread between the two terms (60-month loans default most, r = +0.031); longer exposure means more time to fail.
+  4. dti: Debt-to-income is the standard measure of repayment capacity (r = +0.010) and is available at application time.
+  5. revol_util: Revolving utilisation (r = +0.045) shows how much headroom the borrower has already consumed.
+  6. inq_last_6mths: Recent credit enquiries (r = +0.074) proxy active credit seeking, an early distress signal.
+  7. annual_inc: Income anchors every affordability ratio (r = -0.037); the derived loan_to_income reaches r = +0.050.
+
+Seven LEAST relevant:
+  1. id: Surrogate loan key, unique for all 855k rows — pure noise, and only usable via row order.
+  2. member_id: Surrogate borrower key; identifiers must never enter the model.
+  3. policy_code: Constant (a single distinct value), so it carries zero information.
+  4. pymnt_plan: Degenerate: fewer than 10 loans take the minority value, so it cannot generalise.
+  5. emp_title: Free text with tens of thousands of inconsistent spellings; unusable without NLP.
+  6. title: Borrower-typed loan title that merely restates `purpose`, which is already encoded.
+  7. zip_code: Truncated to three digits, so it is coarse geography that `addr_state` covers more stably.
+
+Separately excluded as target leakage (known only after funding):
+  out_prncp, out_prncp_inv, total_pymnt, total_pymnt_inv, total_rec_prncp, total_rec_int, total_rec_late_fee, recoveries, collection_recovery_fee, last_pymnt_d, last_pymnt_amnt, next_pymnt_d, last_credit_pull_d

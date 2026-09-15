@@ -1,0 +1,10 @@
+rows_raw=855969
+rows_after_dedup=855969
+rows_after_target_dropna=855969
+rows_after_core_dropna=855969
+pct_rows_retained=1.0000
+columns_after_clean=48
+dropped_sparse_columns=annual_inc_joint;dti_joint;verification_status_joint;il_util;mths_since_rcnt_il;open_acc_6m;open_il_6m;open_il_12m;open_il_24m;total_bal_il;open_rv_12m;open_rv_24m;max_bal_bc;all_util;inq_fi;total_cu_tl;inq_last_12m;desc;mths_since_last_record;mths_since_last_major_derog;mths_since_last_delinq
+dropped_leakage_columns=out_prncp;out_prncp_inv;total_pymnt;total_pymnt_inv;total_rec_prncp;total_rec_int;total_rec_late_fee;recoveries;collection_recovery_fee;last_pymnt_d;last_pymnt_amnt;next_pymnt_d;last_credit_pull_d
+dropped_text_columns=desc;emp_title;title;url
+winsorised=revol_util<=150.0;dti<=100.0

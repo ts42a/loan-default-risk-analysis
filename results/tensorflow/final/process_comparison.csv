@@ -1,0 +1,7 @@
+process,model,auc_pr
+Spark MLlib,LogisticRegression,0.1589587156729786
+Spark MLlib,RandomForest,0.1580584067661484
+Spark MLlib,GBT,0.1716421225875251
+TensorFlow,LogisticNN,0.16177923450992202
+TensorFlow,MLP,0.17752582981273526
+TensorFlow,DeepMLP,0.18295773376612925

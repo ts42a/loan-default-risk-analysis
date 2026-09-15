@@ -1,0 +1,40 @@
+CSCI316 Stage 1 — data exploration observations
+Generated 2026-09-15 09:34 from data/data.csv
+
+Dataset
+- 855,969 loans and 73 columns; the parsed record count was verified against the raw line count.
+- `id` and `member_id` are unique (0 duplicate loan ids, 0 identical rows).
+- 42 of 73 columns are fully populated; 21 are more than half empty.
+- Several fields arrive as text ('36 months', '83.7%', dd-MM-yyyy dates) and are cast in section 1.7.
+
+Target
+- 5.43% of loans default (46,467 of 855,969), a 17.4:1 imbalance.
+- 0 rows have no target value.
+- Accuracy is therefore not informative: a constant 'no default' rule already scores 94.57%.
+
+Cleaning
+- 21 sparse columns, 13 post-origination columns and 4 free-text columns were removed.
+- 855,969 rows (100.00%) survive after requiring the core origination fields.
+- revol_util and dti were capped at 150 and 100 to tame implausible tails.
+
+Numeric patterns
+- int_rate: mean 16.02 for defaults vs 13.03 otherwise (+22.9%).
+- dti: mean 18.44 for defaults vs 18.08 otherwise (+2.0%).
+- annual_inc: mean 65,128.92 for defaults vs 75,641.89 otherwise (-13.9%).
+- revol_util: mean 59.44 for defaults vs 54.76 otherwise (+8.5%).
+- loan_amnt: mean 14,573.02 for defaults vs 14,755.48 otherwise (-1.2%).
+- credit_history_years: mean 14.89 for defaults vs 16.45 otherwise (-9.5%).
+- Largest |Pearson r| with the target is int_rate at +0.1550; the relationships are weak and non-linear.
+
+Categorical patterns
+- Grade A defaults at 1.83% rising to 16.70% for grade G.
+- 60-month loans default at 6.52% versus 4.96% for 36-month loans.
+- Riskiest stated purpose is 'educational' at 17.18% (n = 326) against an overall 5.43%.
+
+Attribute relevance
+- Most relevant: int_rate, grade / sub_grade, term, dti, revol_util, inq_last_6mths, annual_inc
+- Least relevant: id, member_id, policy_code, pymnt_plan, emp_title, title, zip_code
+
+Handover
+- Canonical file: results/stage1/data/data_clean.csv (855,969 rows). Re-run Stage 1 only if cleaning changes.
+- Both Stage 2 processes read that file, so they train on identical inputs.

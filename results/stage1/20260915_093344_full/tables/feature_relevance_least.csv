@@ -1,0 +1,8 @@
+rank,attribute,justification
+1,id,"Surrogate loan key, unique for all 855k rows — pure noise, and only usable via row order."
+2,member_id,Surrogate borrower key; identifiers must never enter the model.
+3,policy_code,"Constant (a single distinct value), so it carries zero information."
+4,pymnt_plan,"Degenerate: fewer than 10 loans take the minority value, so it cannot generalise."
+5,emp_title,Free text with tens of thousands of inconsistent spellings; unusable without NLP.
+6,title,"Borrower-typed loan title that merely restates `purpose`, which is already encoded."
+7,zip_code,"Truncated to three digits, so it is coarse geography that `addr_state` covers more stably."

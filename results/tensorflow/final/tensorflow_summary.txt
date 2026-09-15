@@ -1,0 +1,16 @@
+CSCI316 Stage 2, Process Two — TensorFlow / Keras
+Run 2026-09-15 10:20 with TensorFlow 2.19.0
+Rows train/validation/test: 164,346 / 41,087 / 51,358 (stratified (0.64, 0.16, 0.2), seed 192)
+Design matrix width: 136  |  test default rate: 5.46%
+Imbalance handling: class weight 17.31 on defaults, output bias initialised to -2.8515
+Early stopping on validation PR-AUC (patience 8), threshold tuned on validation F1.
+
+Test-set results:
+  LogisticNN (137 params, 42 epochs): ROC-AUC=0.7881  PR-AUC=0.1618  F1(default)@0.620=0.2502  recall=0.5496  precision=0.1620
+  MLP (10,881 params, 60 epochs): ROC-AUC=0.8025  PR-AUC=0.1775  F1(default)@0.710=0.2579  recall=0.4658  precision=0.1784
+  DeepMLP (28,673 params, 41 epochs): ROC-AUC=0.8021  PR-AUC=0.1830  F1(default)@0.750=0.2649  recall=0.4362  precision=0.1902
+
+Best PR-AUC: DeepMLP (0.1830) against a random baseline of 0.0546.
+Depth is worth +0.0212 PR-AUC over the single-unit LogisticNN (0.1618), which quantifies the non-linear signal in the features.
+Process One's best model (GBT) reached PR-AUC 0.1716 on the same split, a difference of +0.0113.
+No post-origination payment feature was used as a predictor.
